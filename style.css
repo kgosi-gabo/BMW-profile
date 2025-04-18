@@ -29,8 +29,8 @@ header {
 }
 
 .logo img {
-  width: 50px;
-  margin-right: 10px;
+  width: 20 px;
+  margin-center: 10 px;
 }
 
 nav ul {
@@ -115,40 +115,40 @@ nav ul li a:hover {
 }
 
 .model-card img {
-  width: 100%;
-  border-radius: 5px;
-  margin-bottom: 1rem;
+  width: 100 %;
+  border-radius: 5 px;
+  margin-bottom: 1 rem;
 }
 
 /* Test Drive Section */
 .test-drive {
-  padding: 3rem 2rem;
+  padding: 3 rem 2 rem;
   text-align: center;
   background-color: #1f1f1f;
 }
 
 .test-drive h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-size: 1.8 rem;
+  margin-bottom: 1 rem;
   color: #ffffff;
 }
 
 .test-drive p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.1 rem;
+  margin-bottom: 1.5 rem;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 1 rem;
   background-color: #141414;
   color: #aaa;
-  font-size: 0.9rem;
+  font-size: 0.9 rem;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 768 px) {
   header {
     flex-direction: column;
     align-items: flex-start;
@@ -156,38 +156,50 @@ footer {
 
   nav ul {
     flex-direction: column;
-    width: 100%;
-    padding: 1rem 0;
+    width: 100 %;
+    padding: 1 rem 0;
   }
 
   nav ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5 rem;
   }
 
   .hero h2 {
-    font-size: 2rem;
+    font-size: 2 rem;
   }
 
   .hero p {
-    font-size: 1rem;
+    font-size: 1 rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480 px) {
   .hero {
-    padding: 3rem 1rem;
+    padding: 3 rem 1 rem;
   }
 
   .btn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.95rem;
+    padding: 0.6 rem 1.2 rem;
+    font-size: 0.95 rem;
   }
 
   .models h3, .test-drive h3 {
-    font-size: 1.5rem;
+    font-size: 1.5 rem;
   }
 
   .test-drive p {
-    font-size: 1rem;
+    font-size: 1 rem;
   }
+}
+/* Blurry Background Layer */
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100 vw;
+  height: 100 vh;
+  background: url('images/bmw-blur.jpg') center/cover no-repeat;
+  z-index: -1;
+  filter: blur (8 px);
+  opacity: 0.2;
 }
