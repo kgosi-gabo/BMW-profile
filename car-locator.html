@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMW Car Locator</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .locator-container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .search-form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .search-form input {
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .search-form button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .search-form button:hover {
+            background-color: #45a049;
+        }
+
+        .results {
+            margin-top: 20px;
+        }
+
+        .car-result {
+            background-color: #f2f2f2;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .car-result img {
+            width: 100px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .car-details {
+            flex: 1;
+        }
+
+        .car-details h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .car-details p {
+            margin: 5px 0;
+        }
+
+        .view-details-btn {
+            padding: 8px 16px;
+            background-color: #1e2a3a;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .view-details-btn:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Shared Header -->
+    <header>
+        <div class="logo-jpg">
+            <img src="bmw-logo.jpg" alt="BMW-logo" />
+            <h1>BMW Official Website</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="models.html">Models</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="test-drive.html">Book a Test Drive</a></li>
+                <li><a href="dealerships.html">Dealerships</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Car Locator Section -->
+    <div class="locator-container">
+        <h2>Find Your BMW</h2>
+        <p>Enter your location to find the nearest BMW dealerships and available models.</p>
+
+        <!-- Search Form -->
+        <div class="search-form">
+            <input type="text" id="location-input" placeholder="Enter your city or zip code..." />
+            <button onclick="searchCars()">Search Cars</button>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results-container" class="results" style="display:none;">
+            <h3>Available BMW Cars Near You:</h3>
+
+            <div id="car-results">
+                <!-- Car results will appear here dynamically -->
+            </div>
+        </div>
+
+        <div id="no-results" class="results" style="display:none;">
+            <h3>No cars found in this area.</h3>
+            <p>Please try another location.</p>
+        </div>
+    </div>
+
+    <!-- Shared Footer -->
+    <footer>
+        <p>&copy; 2025 BMW Motors. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simulated car data (replace with actual API calls)
+        const carDatabase = [
+            {
+                model: 'BMW 3 Series',
+                location: 'New York, NY',
+                price: '$41,000',
+                img: 'bmw-3-series.jpg',
+                url: 'models.html#bmw-3-series'
+            },
+            {
+                model: 'BMW X5',
+                location: 'Los Angeles, CA',
+                price: '$59,400',
+                img: 'bmw-x5.jpg',
+                url: 'models.html#bmw-x5'
+            },
+            {
+                model: 'BMW M3',
+                location: 'Chicago, IL',
+                price: '$70,000',
+                img: 'bmw-m3.jpg',
+                url: 'models.html#bmw-m3'
+            }
+            // Add more car models as needed
+        ];
+
+        function searchCars() {
+            const location = document.getElementById('location-input').value.trim().toLowerCase();
+            const resultsContainer = document.getElementById('results-container');
+            const carResultsContainer = document.getElementById('car-results');
+            const noResultsContainer = document.getElementById('no-results');
+            
+            // Clear previous results
+            carResultsContainer.innerHTML = '';
+            noResultsContainer.style.display = 'none';
+            resultsContainer.style.display = 'none';
+
+            // Filter cars based on location
+            const filteredCars = carDatabase.filter(car => car.location.toLowerCase().includes(location));
+
+            if (filteredCars.length > 0) {
+                filteredCars.forEach(car => {
+                    const carElement = document.createElement('div');
+                    carElement.classList.add('car-result');
+                    
+                    carElement.innerHTML = `
+                        <img src="${car.img}" alt="${car.model}" />
+                        <div class="car-details">
+                            <h3>${car.model}</h3>
+                            <p><strong>Location:</strong> ${car.location}</p>
+                            <p><strong>Price:</strong> ${car.price}</p>
+                        </div>
+                        <a href="${car.url}" class="view-details-btn">View Details</a>
+                    `;
+                    
+                    carResultsContainer.appendChild(carElement);
+                });
+
+                resultsContainer.style.display = 'block';
+            } else {
+                noResultsContainer.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
