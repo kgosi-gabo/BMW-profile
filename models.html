@@ -18,7 +18,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="models.html" class="active">Models</a></li>
         <li><a href="features.html">Features</a></li>
-        <li><a href="test-drive.html">Book a Test Drive</a></li>
+        <li><a href="test-drive.html" id="book-test-drive-link">Book a Test Drive</a></li>
         <li><a href="dealerships.html">Dealerships</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -38,7 +38,15 @@
           <h3>BMW M3</h3>
           <p>High-performance sports sedan with 473 hp and iconic M engineering.</p>
           <p><strong>Starting at:</strong> $76,000</p>
-          <a href="car-locator.html" class="btn">Search New Car Locator</a>
+          <button class="btn" onclick="showCarDetails('m3')">Find Out More</button>
+          <a href="#book-test-drive-link" class="btn">Book a Test Drive</a>
+          <div id="m3-details" class="car-details" style="display: none;">
+            <h4>BMW M3 - 360° View</h4>
+            <div class="car-360-view">
+              <!-- Replace with actual 360° viewer or video -->
+              <img src="bmw-m3-360.jpg" alt="BMW M3 360° View">
+            </div>
+          </div>
         </div>
 
         <!-- BMW X5 -->
@@ -47,7 +55,15 @@
           <h3>BMW X5</h3>
           <p>Premium midsize SUV blending power, luxury, and advanced safety.</p>
           <p><strong>Starting at:</strong> $66,000</p>
-          <a href="car-locator.html" class="btn">Search New Car Locator</a>
+          <button class="btn" onclick="showCarDetails('x5')">Find Out More</button>
+          <a href="#book-test-drive-link" class="btn">Book a Test Drive</a>
+          <div id="x5-details" class="car-details" style="display: none;">
+            <h4>BMW X5 - 360° View</h4>
+            <div class="car-360-view">
+              <!-- Replace with actual 360° viewer or video -->
+              <img src="bmw-x5-360.jpg" alt="BMW X5 360° View">
+            </div>
+          </div>
         </div>
 
         <!-- BMW i8 -->
@@ -56,9 +72,56 @@
           <h3>BMW i8</h3>
           <p>Futuristic plug-in hybrid sports car with bold design and sustainability.</p>
           <p><strong>Starting at:</strong> $147,500</p>
-          <a href="car-locator.html" class="btn">Search New Car Locator</a>
+          <button class="btn" onclick="showCarDetails('i8')">Find Out More</button>
+          <a href="#book-test-drive-link" class="btn">Book a Test Drive</a>
+          <div id="i8-details" class="car-details" style="display: none;">
+            <h4>BMW i8 - 360° View</h4>
+            <div class="car-360-view">
+              <!-- Replace with actual 360° viewer or video -->
+              <img src="bmw-i8-360.jpg" alt="BMW i8 360° View">
+            </div>
+          </div>
         </div>
 
         <!-- BMW 3 Series -->
         <div class="model-card">
-          <img src
+          <img src="bmw-3-series.jpg" alt="BMW 3 Series">
+          <h3>BMW 3 Series</h3>
+          <p>Luxury sports sedan with balance, performance, and everyday comfort.</p>
+          <p><strong>Starting at:</strong> $44,500</p>
+          <button class="btn" onclick="showCarDetails('3series')">Find Out More</button>
+          <a href="#book-test-drive-link" class="btn">Book a Test Drive</a>
+          <div id="3series-details" class="car-details" style="display: none;">
+            <h4>BMW 3 Series - 360° View</h4>
+            <div class="car-360-view">
+              <!-- Replace with actual 360° viewer or video -->
+              <img src="bmw-3series-360.jpg" alt="BMW 3 Series 360° View">
+            </div>
+          </div>
+        </div>
+
+        <!-- BMW X7 -->
+        <div class="model-card">
+          <img src="bmw-x7.jpg" alt="BMW X7">
+          <h3>BMW X7</h3>
+          <p>Flagship luxury SUV with three rows and advanced driver assistance.</p>
+          <p><strong>Starting at:</strong> $82,900</p>
+          <button class="btn" onclick="showCarDetails('x7')">Find Out More</button>
+          <a href="#book-test-drive-link" class="btn">Book a Test Drive</a>
+          <div id="x7-details" class="car-details" style="display: none;">
+            <h4>BMW X7 - 360° View</h4>
+            <div class="car-360-view">
+              <!-- Replace with actual 360° viewer or video -->
+              <img src="bmw-x7-360.jpg" alt="BMW X7 360° View">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Footer -->
+  <footer>
+
+::contentReference[oaicite:0]{index=0}
+ 
