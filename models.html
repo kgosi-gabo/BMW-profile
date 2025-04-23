@@ -11,7 +11,6 @@
       background-size: cover;
     }
 
-    /* Reduce image size */
     .car-image {
       width: 100%;
       max-width: 300px;
@@ -21,7 +20,6 @@
       border-radius: 10px;
     }
 
-    /* Keep Me Informed section */
     .professional-form {
       background-color: #000;
       color: #fff;
@@ -96,8 +94,6 @@
           <h3>BMW M3</h3>
           <p>High-performance sports sedan with 473 hp and iconic M engineering.</p>
           <p><strong>Starting at:</strong> $76,000</p>
-
-          <!-- Build & Price -->
           <div class="build-price">
             <h4>Build & Price</h4>
             <p>Choose a color:</p>
@@ -105,8 +101,6 @@
             <button onclick="changeColor('m3', 'blue')">Blue</button>
             <button onclick="changeColor('m3', 'black')">Black</button>
           </div>
-
-          <!-- Keep Me Informed -->
           <div class="keep-informed professional-form">
             <h4>Keep Me Informed</h4>
             <form>
@@ -118,9 +112,55 @@
           </div>
         </div>
 
-        <!-- Repeat similar structure for other models (X5, i8, 3 Series, X7) -->
-        <!-- Copy the model-card block above and update IDs, text, and file names accordingly -->
+        <!-- BMW i8 -->
+        <div class="model-card">
+          <img id="bmw-i8-image" src="bmw-i8-blue.jpg" alt="BMW i8" class="car-image">
+          <h3>BMW i8</h3>
+          <p>Plug-in hybrid with futuristic design and dynamic acceleration.</p>
+          <p><strong>Starting at:</strong> $147,500</p>
+          <div class="build-price">
+            <h4>Build & Price</h4>
+            <p>Choose a color:</p>
+            <button onclick="changeColor('i8', 'blue')">Blue</button>
+            <button onclick="changeColor('i8', 'white')">White</button>
+            <button onclick="changeColor('i8', 'silver')">Silver</button>
+          </div>
+          <div class="keep-informed professional-form">
+            <h4>Keep Me Informed</h4>
+            <form>
+              <input type="text" placeholder="First Name" required><br>
+              <input type="text" placeholder="Last Name" required><br>
+              <input type="email" placeholder="Email Address" required><br>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
 
+        <!-- BMW X5 -->
+        <div class="model-card">
+          <img id="bmw-x5-image" src="bmw-x5-black.jpg" alt="BMW X5" class="car-image">
+          <h3>BMW X5</h3>
+          <p>Luxury SUV with advanced all-wheel drive and powerful turbo engines.</p>
+          <p><strong>Starting at:</strong> $65,000</p>
+          <div class="build-price">
+            <h4>Build & Price</h4>
+            <p>Choose a color:</p>
+            <button onclick="changeColor('x5', 'white')">White</button>
+            <button onclick="changeColor('x5', 'black')">Black</button>
+            <button onclick="changeColor('x5', 'silver')">Silver</button>
+          </div>
+          <div class="keep-informed professional-form">
+            <h4>Keep Me Informed</h4>
+            <form>
+              <input type="text" placeholder="First Name" required><br>
+              <input type="text" placeholder="Last Name" required><br>
+              <input type="email" placeholder="Email Address" required><br>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Add more models similarly -->
       </div>
     </section>
   </main>
