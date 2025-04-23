@@ -9,13 +9,13 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #1c1c1c; /* Dim background color */
+            color: #dcdcdc; /* Light gray text for better visibility */
         }
 
         header {
-            background: #121212;
-            color: #fff;
+            background: #0f0f0f; /* Darker header for contrast */
+            color: #dcdcdc;
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
@@ -53,7 +53,7 @@
         }
 
         nav ul li a {
-            color: #fff;
+            color: #dcdcdc;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s ease;
@@ -66,14 +66,15 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: url('bmw-hero.jpg') center/cover no-repeat;
+            background: url('bmw-background.jpg') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: #fff;
+            color: #ffffff; /* White text for contrast against the dim background */
             padding: 2rem;
+            box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.7); /* Dim overlay on the background */
         }
 
         .hero h1 {
@@ -104,13 +105,14 @@
         /* Featured Models Section */
         .featured {
             padding: 3rem 2rem;
-            background: #fff;
+            background: #2c2c2c; /* Slightly lighter dim background */
             text-align: center;
         }
 
         .featured h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
+            color: #ffffff; /* White for headings */
         }
 
         .model-grid {
@@ -120,17 +122,17 @@
         }
 
         .model-card {
-            background: #f9f9f9;
+            background: #3c3c3c; /* Dark gray card background */
             padding: 1rem;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .model-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
         }
 
         .model-card img {
@@ -142,17 +144,18 @@
         .model-card h4 {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
+            color: #ffffff;
         }
 
         .model-card p {
             font-size: 1rem;
-            color: #555;
+            color: #dcdcdc;
         }
 
         /* Footer */
         footer {
-            background: #121212;
-            color: #aaa;
+            background: #0f0f0f;
+            color: #dcdcdc;
             text-align: center;
             padding: 2rem 1rem;
             font-size: 0.9rem;
@@ -165,7 +168,7 @@
         }
 
         footer a:hover {
-            color: #fff;
+            color: #ffffff;
         }
 
         footer .social-icons {
