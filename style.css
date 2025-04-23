@@ -5,41 +5,39 @@
   box-sizing: border-box;
 }
 
-
-}
-
 body {
-    margin: 0;
-    font-family: sans-serif;
-    position: relative;
-    min-height: 100vh;
-    overflow: hidden;
+  font-family: sans-serif;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #121212;
 }
 
 body::before {
-    content: "";
-    background-image: url('bmw-background.jpg');
-    background-size: cover;
-    background-position: center;
-    filter: blur(10px);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+  content: "";
+  background-image: url('bmw-background.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.3;
 }
 
-}
-
+/* Header */
 .logo {
   display: flex;
   align-items: center;
+  padding: 1rem;
 }
 
 .logo img {
-  width: 20 px;
-  margin-center: 10 px;
+  width: 60px;
+  margin-right: 10px;
 }
 
 nav ul {
@@ -47,6 +45,7 @@ nav ul {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
+  padding: 1rem;
 }
 
 nav ul li a {
@@ -55,7 +54,8 @@ nav ul li a {
   transition: color 0.3s;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
   color: #00bcd4;
 }
 
@@ -85,6 +85,8 @@ nav ul li a:hover {
   border-radius: 5px;
   font-weight: bold;
   transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -97,7 +99,8 @@ nav ul li a:hover {
   background-color: #181818;
 }
 
-.models h3 {
+.models h3,
+.models h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -124,40 +127,84 @@ nav ul li a:hover {
 }
 
 .model-card img {
-  width: 100 %;
-  border-radius: 5 px;
-  margin-bottom: 1 rem;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+/* Build & Price / Keep Me Informed */
+.build-price button {
+  margin: 5px;
+  padding: 5px 10px;
+  border: none;
+  background: #444;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.build-price button:hover {
+  background: #222;
+}
+
+.keep-informed input {
+  margin: 5px 0;
+  padding: 8px;
+  width: 90%;
+}
+
+.keep-informed button {
+  margin-top: 5px;
+  padding: 8px 16px;
+  background-color: #003366;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
 /* Test Drive Section */
 .test-drive {
-  padding: 3 rem 2 rem;
+  padding: 3rem 2rem;
   text-align: center;
   background-color: #1f1f1f;
 }
 
 .test-drive h3 {
-  font-size: 1.8 rem;
-  margin-bottom: 1 rem;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
   color: #ffffff;
 }
 
 .test-drive p {
-  font-size: 1.1 rem;
-  margin-bottom: 1.5 rem;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 1 rem;
+  padding: 1rem;
   background-color: #141414;
   color: #aaa;
-  font-size: 0.9 rem;
+  font-size: 0.9rem;
+}
+
+/* Background Image - scattered blur */
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('bmw-blur.jpg') center/cover no-repeat;
+  z-index: -1;
+  filter: blur(8px);
+  opacity: 0.2;
 }
 
 /* Responsive Design */
-@media (max-width: 768 px) {
+@media (max-width: 768px) {
   header {
     flex-direction: column;
     align-items: flex-start;
@@ -165,50 +212,38 @@ footer {
 
   nav ul {
     flex-direction: column;
-    width: 100 %;
-    padding: 1 rem 0;
+    width: 100%;
+    padding: 1rem 0;
   }
 
   nav ul li {
-    margin-bottom: 0.5 rem;
+    margin-bottom: 0.5rem;
   }
 
   .hero h2 {
-    font-size: 2 rem;
+    font-size: 2rem;
   }
 
   .hero p {
-    font-size: 1 rem;
+    font-size: 1rem;
   }
 }
 
-@media (max-width: 480 px) {
+@media (max-width: 480px) {
   .hero {
-    padding: 3 rem 1 rem;
+    padding: 3rem 1rem;
   }
 
   .btn {
-    padding: 0.6 rem 1.2 rem;
-    font-size: 0.95 rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
   }
 
   .models h3, .test-drive h3 {
-    font-size: 1.5 rem;
+    font-size: 1.5rem;
   }
 
   .test-drive p {
-    font-size: 1 rem;
+    font-size: 1rem;
   }
-}
-/* Blurry Background Layer */
-.background-image {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100 vw;
-  height: 100 vh;
-  background: url('bmw-blur.jpg') center/cover no-repeat;
-  z-index: -1;
-  filter: blur (8 px);
-  opacity: 0.2;
 }
