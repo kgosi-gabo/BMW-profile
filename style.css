@@ -1,249 +1,136 @@
-/* Reset & Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMW Models | Discover Your Ultimate Drive</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: url('bmw-background.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
 
-body {
-  font-family: sans-serif;
-  position: relative;
-  min-height: 100vh;
-  overflow-x: hidden;
-  background-color: #121212;
-}
+    .car-image {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+      border-radius: 10px;
+    }
 
-body::before {
-  content: "";
-  background-image: url('bmw-background.jpg');
-  background-size: cover;
-  background-position: center;
-  filter: blur(10px);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  opacity: 0.3;
-}
+    .models {
+      padding: 3rem 2rem;
+    }
 
-/* Header */
-.logo {
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-}
+    .model-card {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+      color: white;
+    }
 
-.logo img {
-  width: 60px;
-  margin-right: 10px;
-}
+    .model-card:hover {
+      transform: translateY(-5px);
+    }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  padding: 1rem;
-}
+    h2, h3, h4, p {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Shared Header -->
+  <header>
+    <div class="logo">
+      <img src="bmw-logo.jpg" alt="BMW-logo" />
+      <h1>BMW Official Website</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="models.html" class="active">Models</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="test-drive.html" id="book-test-drive-link">Book a Test Drive</a></li>
+        <li><a href="dealerships.html">Dealerships</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-nav ul li a {
-  color: #e0e0e0;
-  text-decoration: none;
-  transition: color 0.3s;
-}
+  <!-- Models Section -->
+  <main class="models">
+    <section>
+      <h2>Explore Our Featured BMW Models</h2>
+      <p>Every BMW is crafted for performance, luxury, and cutting-edge innovation. Find your perfect model below.</p>
 
-nav ul li a:hover,
-nav ul li a.active {
-  color: #00bcd4;
-}
+      <div class="model-grid">
+        <!-- BMW M3 -->
+        <div class="model-card">
+          <img id="bmw-m3-image" src="bmw-m3-red.jpg" alt="BMW M3" class="car-image">
+          <h3>BMW M3</h3>
+          <p>High-performance sports sedan with 473 hp and iconic M engineering.</p>
+          <p><strong>Starting at:</strong> $76,000</p>
 
-/* Hero Section */
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('images/bmw-hero.jpg') center/cover no-repeat;
-  text-align: center;
-  padding: 5rem 2rem;
-  color: #ffffff;
-}
+          <!-- Build & Price -->
+          <div class="build-price">
+            <h4>Build & Price</h4>
+            <p>Choose a color:</p>
+            <button onclick="changeColor('m3', 'red')">Red</button>
+            <button onclick="changeColor('m3', 'blue')">Blue</button>
+            <button onclick="changeColor('m3', 'black')">Black</button>
+          </div>
+        </div>
 
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
+        <!-- BMW i8 -->
+        <div class="model-card">
+          <img id="bmw-i8-image" src="bmw-i8-black.jpg" alt="BMW i8" class="car-image">
+          <h3>BMW i8</h3>
+          <p>Plug-in hybrid sports car with futuristic design and exhilarating performance.</p>
+          <p><strong>Starting at:</strong> $147,500</p>
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
+          <div class="build-price">
+            <h4>Build & Price</h4>
+            <p>Choose a color:</p>
+            <button onclick="changeColor('i8', 'black')">Black</button>
+            <button onclick="changeColor('i8', 'red')">Red</button>
+          </div>
+        </div>
 
-.btn {
-  background-color: #00bcd4;
-  color: #121212;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s;
-  border: none;
-  cursor: pointer;
-}
+        <!-- BMW X5 -->
+        <div class="model-card">
+          <img id="bmw-x5-image" src="bmw-x5-red.jpg" alt="BMW X5" class="car-image">
+          <h3>BMW X5</h3>
+          <p>Luxury SUV with advanced technology and dynamic performance.</p>
+          <p><strong>Starting at:</strong> $65,200</p>
 
-.btn:hover {
-  background-color: #008c9e;
-}
+          <div class="build-price">
+            <h4>Build & Price</h4>
+            <p>Choose a color:</p>
+            <button onclick="changeColor('x5', 'red')">Red</button>
+            <button onclick="changeColor('x5', 'black')">Black</button>
+          </div>
+        </div>
 
-/* Models Section */
-.models {
-  padding: 3rem 2rem;
-  background-color: #181818;
-}
+      </div>
+    </section>
+  </main>
 
-.models h3,
-.models h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #ffffff;
-}
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 BMW. All rights reserved.</p>
+  </footer>
 
-.model-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.model-card {
-  background-color: #222;
-  padding: 1rem;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  transition: transform 0.3s;
-}
-
-.model-card:hover {
-  transform: translateY(-5px);
-}
-
-.model-card img {
-  width: 100%;
-  border-radius: 5px;
-  margin-bottom: 1rem;
-}
-
-/* Build & Price / Keep Me Informed */
-.build-price button {
-  margin: 5px;
-  padding: 5px 10px;
-  border: none;
-  background: #444;
-  color: white;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.build-price button:hover {
-  background: #222;
-}
-
-.keep-informed input {
-  margin: 5px 0;
-  padding: 8px;
-  width: 90%;
-}
-
-.keep-informed button {
-  margin-top: 5px;
-  padding: 8px 16px;
-  background-color: #003366;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-/* Test Drive Section */
-.test-drive {
-  padding: 3rem 2rem;
-  text-align: center;
-  background-color: #1f1f1f;
-}
-
-.test-drive h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #ffffff;
-}
-
-.test-drive p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #141414;
-  color: #aaa;
-  font-size: 0.9rem;
-}
-
-/* Background Image - scattered blur */
-.background-image {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: url('bmw-blur.jpg') center/cover no-repeat;
-  z-index: -1;
-  filter: blur(8px);
-  opacity: 0.2;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav ul {
-    flex-direction: column;
-    width: 100%;
-    padding: 1rem 0;
-  }
-
-  nav ul li {
-    margin-bottom: 0.5rem;
-  }
-
-  .hero h2 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    padding: 3rem 1rem;
-  }
-
-  .btn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.95rem;
-  }
-
-  .models h3, .test-drive h3 {
-    font-size: 1.5rem;
-  }
-
-  .test-drive p {
-    font-size: 1rem;
-  }
-}
+  <!-- JavaScript for Interactions -->
+  <script>
+    function changeColor(model, color) {
+      const img = document.getElementById(`bmw-${model}-image`);
+      img.src = `bmw-${model}-${color}.jpg`;
+    }
+  </script>
+</body>
+</html>
