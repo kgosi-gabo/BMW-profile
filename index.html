@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMW | The Ultimate Driving Machine</title>
-    <link rel="stylesheet" href="style.css">
+    <title>BMW | The Ultimate Driving Experience</title>
     <style>
-        /* Global Styles */
+        /* General Styles */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -26,21 +25,21 @@
             z-index: 1000;
         }
 
-        header .logo {
+        .logo {
             display: flex;
             align-items: center;
         }
 
-        header .logo img {
-            width: 60px;
-            animation: rotateLogo 5s linear infinite; /* BMW logo animation */
+        .logo img {
+            width: 100px;
+            animation: rotateLogo 8s linear infinite; /* Add rotation animation */
         }
 
         @keyframes rotateLogo {
-            from {
+            0% {
                 transform: rotate(0deg);
             }
-            to {
+            100% {
                 transform: rotate(360deg);
             }
         }
@@ -49,165 +48,15 @@
             list-style: none;
             display: flex;
             gap: 1.5rem;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav ul li a:hover {
-            color: #00bcd4;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: url('bmw-world.jpg') center/cover no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-            padding: 2rem;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .hero .btn {
-            background: #00bcd4;
-            color: #121212;
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .hero .btn:hover {
-            background: #008c9e;
-        }
-
-        /* Featured Models */
-        .featured {
-            padding: 3rem 2rem;
-            background: #fff;
-            text-align: center;
-        }
-
-        .featured h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .model-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .model-card {
-            background: #f9f9f9;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .model-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .model-card img {
-            max-width: 100%;
-            border-radius: 5px;
-            margin-bottom: 1rem;
-        }
-
-        .model-card h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Footer */
-        footer {
-            background: #121212;
-            color: #aaa;
-            text-align: center;
-            padding: 2rem 1rem;
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: #00bcd<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMW | The Ultimate Driving Machine</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Global Styles */
-        body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background: #121212;
-            color: #fff;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        header .logo img {
-            width: 60px;
-            animation: rotateLogo 5s linear infinite; /* BMW logo animation */
-        }
-
-        @keyframes rotateLogo {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
+            padding: 0;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s ease;
         }
 
         nav ul li a:hover {
@@ -217,7 +66,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: url('bmw-world.jpg') center/cover no-repeat;
+            background: url('bmw-hero.jpg') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -228,30 +77,31 @@
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             margin-bottom: 2rem;
         }
 
         .hero .btn {
             background: #00bcd4;
             color: #121212;
-            padding: 0.75rem 1.5rem;
+            padding: 1rem 2rem;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .hero .btn:hover {
             background: #008c9e;
+            transform: scale(1.1);
         }
 
-        /* Featured Models */
+        /* Featured Models Section */
         .featured {
             padding: 3rem 2rem;
             background: #fff;
@@ -259,8 +109,8 @@
         }
 
         .featured h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         .model-grid {
@@ -279,8 +129,8 @@
         }
 
         .model-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .model-card img {
@@ -290,8 +140,13 @@
         }
 
         .model-card h4 {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
+        }
+
+        .model-card p {
+            font-size: 1rem;
+            color: #555;
         }
 
         /* Footer */
@@ -304,157 +159,87 @@
         }
 
         footer a {
-            color: #00bcd<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMW | The Ultimate Driving Machine</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Global Styles */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background: #121212;
-            color: #fff;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        header .logo img {
-            width: 60px;
-            animation: rotateLogo 5s linear infinite; /* BMW logo animation */
-        }
-
-        @keyframes rotateLogo {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav ul li a:hover {
             color: #00bcd4;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: url('bmw-world.jpg') center/cover no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-            padding: 2rem;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .hero .btn {
-            background: #00bcd4;
-            color: #121212;
-            padding: 0.75rem 1.5rem;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+            transition: color 0.3s ease;
         }
 
-        .hero .btn:hover {
-            background: #008c9e;
+        footer a:hover {
+            color: #fff;
         }
 
-        /* Featured Models */
-        .featured {
-            padding: 3rem 2rem;
-            background: #fff;
-            text-align: center;
+        footer .social-icons {
+            margin: 1rem 0;
         }
 
-        .featured h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+        footer .social-icons a {
+            margin: 0 0.5rem;
+            color: #00bcd4;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .model-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+        footer .social-icons a:hover {
+            color: #008c9e;
         }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="bmw-logo.jpg" alt="BMW Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="models.html">Models</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="test-drive.html">Test Drive</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        .model-card {
-            background: #f9f9f9;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to BMW World</h1>
+        <p>Discover the ultimate driving experience with BMW.</p>
+        <a href="models.html" class="btn">Explore Models</a>
+    </section>
 
-        .model-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
+    <!-- Featured Models Section -->
+    <section class="featured">
+        <h2>Our Featured Models</h2>
+        <div class="model-grid">
+            <div class="model-card">
+                <img src="bmw-m3.jpg" alt="BMW M3">
+                <h4>BMW M3</h4>
+                <p>High-performance sedan with unmatched agility and power.</p>
+            </div>
+            <div class="model-card">
+                <img src="bmw-x5.jpg" alt="BMW X5">
+                <h4>BMW X5</h4>
+                <p>Luxury SUV with cutting-edge technology and comfort.</p>
+            </div>
+            <div class="model-card">
+                <img src="bmw-i8.jpg" alt="BMW i8">
+                <h4>BMW i8</h4>
+                <p>Futuristic hybrid supercar redefining performance and style.</p>
+            </div>
+        </div>
+    </section>
 
-        .model-card img {
-            max-width: 100%;
-            border-radius: 5px;
-            margin-bottom: 1rem;
-        }
-
-        .model-card h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Footer */
-        footer {
-            background: #121212;
-            color: #aaa;
-            text-align: center;
-            padding: 2rem 1rem;
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: #00bcd
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 BMW. All rights reserved. <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
