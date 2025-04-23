@@ -9,7 +9,7 @@
 <body>
   <!-- Shared Header -->
   <header>
-    <div class="logo-jpg">
+    <div class="logo">
       <img src="bmw-logo.jpg" alt="BMW-logo" />
       <h1>BMW Official Website</h1>
     </div>
@@ -34,94 +34,64 @@
       <div class="model-grid">
         <!-- BMW M3 -->
         <div class="model-card">
-          <img src="bmw-m3.jpg" alt="BMW M3">
+          <img id="bmw-m3-image" src="bmw-m3-red.jpg" alt="BMW M3">
           <h3>BMW M3</h3>
           <p>High-performance sports sedan with 473 hp and iconic M engineering.</p>
           <p><strong>Starting at:</strong> $76,000</p>
-          <button class="btn" onclick="showCarDetails('m3')">Find Out More</button>
-          <a href="#book-test-drive-link" class="btn">Book a Test Drive</a>
-          <div id="m3-details" class="car-details" style="display: none;">
-            <h4>BMW M3 - 360° View</h4>
-            <div class="car-360-view">
-              <!-- Replace with actual 360° viewer or video -->
-              <img src="bmw-m3-360.jpg" alt="BMW M3 360° View">
-            </div>
+
+          <!-- Find More: 360 Video -->
+          <button class="btn" onclick="toggle360('m3')">Find More (360° View)</button>
+          <div id="m3-360" class="car-360-view" style="display: none;">
+            <video width="100%" controls>
+              <source src="bmw-m3-360.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <!-- Build & Price -->
+          <div class="build-price">
+            <h4>Build & Price</h4>
+            <p>Choose a color:</p>
+            <button onclick="changeColor('m3', 'red')">Red</button>
+            <button onclick="changeColor('m3', 'blue')">Blue</button>
+            <button onclick="changeColor('m3', 'black')">Black</button>
+          </div>
+
+          <!-- Keep Me Informed -->
+          <div class="keep-informed">
+            <h4>Keep Me Informed</h4>
+            <form>
+              <input type="text" placeholder="First Name" required><br>
+              <input type="text" placeholder="Last Name" required><br>
+              <input type="email" placeholder="Email Address" required><br>
+              <button type="submit">Submit</button>
+            </form>
           </div>
         </div>
 
-        <!-- BMW X5 -->
-        <div class="model-card">
-          <img src="bmw-x5.jpg" alt="BMW X5">
-          <h3>BMW X5</h3>
-          <p>Premium midsize SUV blending power, luxury, and advanced safety.</p>
-          <p><strong>Starting at:</strong> $66,000</p>
-          <button class="btn" onclick="showCarDetails('x5')">Find Out More</button>
-          <a href="#book-test-drive-link" class="btn">Book a Test Drive</a>
-          <div id="x5-details" class="car-details" style="display: none;">
-            <h4>BMW X5 - 360° View</h4>
-            <div class="car-360-view">
-              <!-- Replace with actual 360° viewer or video -->
-              <img src="bmw-x5-360.jpg" alt="BMW X5 360° View">
-            </div>
-          </div>
-        </div>
+        <!-- Repeat similar structure for other models (X5, i8, 3 Series, X7) -->
+        <!-- Copy the model-card block above and update IDs, text, and file names accordingly -->
 
-        <!-- BMW i8 -->
-        <div class="model-card">
-          <img src="bmw-i8.jpg" alt="BMW i8">
-          <h3>BMW i8</h3>
-          <p>Futuristic plug-in hybrid sports car with bold design and sustainability.</p>
-          <p><strong>Starting at:</strong> $147,500</p>
-          <button class="btn" onclick="showCarDetails('i8')">Find Out More</button>
-          <a href="#book-test-drive-link" class="btn">Book a Test Drive</a>
-          <div id="i8-details" class="car-details" style="display: none;">
-            <h4>BMW i8 - 360° View</h4>
-            <div class="car-360-view">
-              <!-- Replace with actual 360° viewer or video -->
-              <img src="bmw-i8-360.jpg" alt="BMW i8 360° View">
-            </div>
-          </div>
-        </div>
-
-        <!-- BMW 3 Series -->
-        <div class="model-card">
-          <img src="bmw-3-series.jpg" alt="BMW 3 Series">
-          <h3>BMW 3 Series</h3>
-          <p>Luxury sports sedan with balance, performance, and everyday comfort.</p>
-          <p><strong>Starting at:</strong> $44,500</p>
-          <button class="btn" onclick="showCarDetails('3series')">Find Out More</button>
-          <a href="#book-test-drive-link" class="btn">Book a Test Drive</a>
-          <div id="3series-details" class="car-details" style="display: none;">
-            <h4>BMW 3 Series - 360° View</h4>
-            <div class="car-360-view">
-              <!-- Replace with actual 360° viewer or video -->
-              <img src="bmw-3series-360.jpg" alt="BMW 3 Series 360° View">
-            </div>
-          </div>
-        </div>
-
-        <!-- BMW X7 -->
-        <div class="model-card">
-          <img src="bmw-x7.jpg" alt="BMW X7">
-          <h3>BMW X7</h3>
-          <p>Flagship luxury SUV with three rows and advanced driver assistance.</p>
-          <p><strong>Starting at:</strong> $82,900</p>
-          <button class="btn" onclick="showCarDetails('x7')">Find Out More</button>
-          <a href="#book-test-drive-link" class="btn">Book a Test Drive</a>
-          <div id="x7-details" class="car-details" style="display: none;">
-            <h4>BMW X7 - 360° View</h4>
-            <div class="car-360-view">
-              <!-- Replace with actual 360° viewer or video -->
-              <img src="bmw-x7-360.jpg" alt="BMW X7 360° View">
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   </main>
 
-  <!-- Shared Footer -->
+  <!-- Footer -->
   <footer>
+    <p>&copy; 2025 BMW. All rights reserved.</p>
+  </footer>
 
-::contentReference[oaicite:0]{index=0}
- 
+  <!-- JavaScript for Interactions -->
+  <script>
+    function toggle360(id) {
+      const view = document.getElementById(id + '-360');
+      view.style.display = view.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function changeColor(model, color) {
+      const img = document.getElementById(`bmw-${model}-image`);
+      img.src = `bmw-${model}-${color}.jpg`;
+    }
+  </script>
+</body>
+</html>
