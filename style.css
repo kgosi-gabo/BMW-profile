@@ -1,247 +1,117 @@
-/* Reset & Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* General Styles */
 body {
-  font-family: sans-serif;
-  position: relative;
-  min-height: 100vh;
-  overflow-x: hidden;
-  background-color: #121212;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1c1c1c; /* Dim background color */
+    color: #dcdcdc; /* Default text color: light gray */
+    transition: color 0.5s ease; /* Smooth transition for text color */
 }
 
-body::before {
-  content: "";
-  background-image: url('bmw-background.jpg');
-  background-size: cover;
-  background-position: center;
-  filter: blur(10px);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  opacity: 0.3;
+header, footer {
+    background: #0f0f0f; /* Darker background for header and footer */
 }
 
-/* Header */
-.logo {
-  display: flex;
-  align-items: center;
-  padding: 1rem;
+header a,
+footer a {
+    color: #dcdcdc; /* Default text color */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition for links */
 }
 
-.logo img {
-  width: 40px;
-  margin-center: 10px;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  padding: 1rem;
-}
-
-nav ul li a {
-    color: #ffffff; /* Update to a brighter color */
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-  color: #00bcd4;
+header a:hover,
+footer a:hover {
+    color: #00bcd4; /* Change to blue when hovered */
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('images/bmw-hero.jpg') center/cover no-repeat;
-  text-align: center;
-  padding: 5rem 2rem;
-  color: #ffffff;
+    height: 100vh;
+    background: url('bmw-background.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff; /* Default white text for contrast */
+    padding: 2rem;
 }
 
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+.hero:hover {
+    color: #00bcd4; /* Change text color to blue when hovered */
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease; /* Smooth transition for heading color */
+}
+
+.hero h1:hover {
+    color: #ffcc00; /* Change heading to gold when hovered */
 }
 
 .hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    transition: color 0.3s ease; /* Smooth transition for paragraph color */
 }
 
-.btn {
-  background-color: #121212;
-  color: #121212;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s;
-  border: none;
-  cursor: pointer;
+.hero p:hover {
+    color: #ff5733; /* Change paragraph text to orange when hovered */
 }
 
-.btn:hover {
-  background-color: #008c9e;
+.hero .btn {
+    background: #00bcd4;
+    color: #121212;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Models Section */
-.models {
-  padding: 3rem 2rem;
-  background-color: #181818;
+.hero .btn:hover {
+    background: #008c9e;
+    transform: scale(1.1);
 }
 
-.models h3,
-.models h2 {
-  text-align: center;
-  font-size: 4rem;
-  margin-bottom: 2rem;
-  color: #ffffff;
+/* Featured Models Section */
+.featured h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #ffffff; /* Default white text for headings */
+    transition: color 0.3s ease; /* Smooth transition */
 }
 
-.model-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+.featured h2:hover {
+    color: #ffcc00; /* Change to gold when hovered */
 }
 
-.model-card {
-  background-color: #222;
-  padding: 1rem;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  transition: transform 0.3s;
+.model-card h4 {
+    font-size: 1.5rem;
+    color: #ffffff; /* Default white text */
+    transition: color 0.3s ease; /* Smooth transition */
 }
 
-.model-card:hover {
-  transform: translateY(-5px);
+.model-card h4:hover {
+    color: #ff5733; /* Change to orange when hovered */
 }
 
-.model-card img {
-  width: 100%;
-  border-radius: 5px;
-  margin-bottom: 1rem;
+.model-card p {
+    color: #dcdcdc; /* Default light gray text */
+    transition: color 0.3s ease; /* Smooth transition */
 }
 
-/* Build & Price / Keep Me Informed */
-.build-price button {
-  margin: 5px;
-  padding: 5px 10px;
-  border: none;
-  background: #444;
-  color: white;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.build-price button:hover {
-  background: #222;
-}
-
-.keep-informed input {
-  margin: 5px 0;
-  padding: 8px;
-  width: 90%;
-}
-
-.keep-informed button {
-  margin-top: 5px;
-  padding: 8px 16px;
-  background-color: #003366;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-/* Test Drive Section */
-.test-drive {
-  padding: 3rem 2rem;
-  text-align: center;
-  background-color: #1f1f1f;
-}
-
-.test-drive h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #ffffff;
-}
-
-.test-drive p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
+.model-card p:hover {
+    color: #00bcd4; /* Change to blue when hovered */
 }
 
 /* Footer */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #141414;
-  color: #aaa;
-  font-size: 0.9rem;
+footer p {
+    color: #dcdcdc; /* Default light gray */
+    transition: color 0.3s ease; /* Smooth transition */
 }
 
-/* Background Image - scattered blur */
-.background-image {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: url('bmw-blur.jpg') center/cover no-repeat;
-  z-index: -1;
-  filter: blur(8px);
-  opacity: 0.2;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav ul {
-    flex-direction: column;
-    width: 100%;
-    padding: 1rem 0;
-  }
-
-  nav ul li {
-    margin-bottom: 0.5rem;
-  }
-
-  .hero h2 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    padding: 3rem 1rem;
-  }
-
-  .btn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.95rem;
-  }
-
-  .models h3, .test-drive h3 {
-    font-size: 1.5rem;
-  }
-
-  .test-drive p {
-    font-size: 1rem;
-  }
+footer p:hover {
+    color: #00bcd4; /* Change footer text to blue when hovered */
 }
