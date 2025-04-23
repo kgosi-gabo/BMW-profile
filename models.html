@@ -6,6 +6,11 @@
   <title>BMW Models | Discover Your Ultimate Drive</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    body {
+      background: url('bmw-background.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
     /* Reduce image size */
     .car-image {
       width: 100%;
@@ -18,12 +23,13 @@
 
     /* Keep Me Informed section */
     .professional-form {
-      background-color: #f5f5f5;
+      background-color: #000;
+      color: #fff;
       padding: 15px 20px;
       border-radius: 8px;
       margin-top: 15px;
       font-size: 14px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     }
 
     .professional-form h4 {
@@ -36,8 +42,10 @@
       padding: 8px;
       margin: 5px 0;
       box-sizing: border-box;
-      border: 1px solid #ccc;
+      border: 1px solid #444;
       border-radius: 4px;
+      background-color: #222;
+      color: #fff;
     }
 
     .professional-form button {
@@ -89,15 +97,6 @@
           <p>High-performance sports sedan with 473 hp and iconic M engineering.</p>
           <p><strong>Starting at:</strong> $76,000</p>
 
-          <!-- Find More: 360 Video -->
-          <button class="btn" onclick="toggle360('m3')">Find More (360° View)</button>
-          <div id="m3-360" class="car-360-view" style="display: none;">
-            <video width="100%" controls>
-              <source src="bmw-m3-360.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-
           <!-- Build & Price -->
           <div class="build-price">
             <h4>Build & Price</h4>
@@ -133,11 +132,6 @@
 
   <!-- JavaScript for Interactions -->
   <script>
-    function toggle360(id) {
-      const view = document.getElementById(id + '-360');
-      view.style.display = view.style.display === 'none' ? 'block' : 'none';
-    }
-
     function changeColor(model, color) {
       const img = document.getElementById(`bmw-${model}-image`);
       img.src = `bmw-${model}-${color}.jpg`;
