@@ -5,6 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BMW Models | Discover Your Ultimate Drive</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Reduce image size */
+    .car-image {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    /* Keep Me Informed section */
+    .professional-form {
+      background-color: #f5f5f5;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-top: 15px;
+      font-size: 14px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .professional-form h4 {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .professional-form input {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .professional-form button {
+      padding: 8px 15px;
+      background-color: #0a3d62;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .professional-form button:hover {
+      background-color: #074070;
+    }
+  </style>
 </head>
 <body>
   <!-- Shared Header -->
@@ -34,7 +84,7 @@
       <div class="model-grid">
         <!-- BMW M3 -->
         <div class="model-card">
-          <img id="bmw-m3-image" src="bmw-m3-red.jpg" alt="BMW M3">
+          <img id="bmw-m3-image" src="bmw-m3-red.jpg" alt="BMW M3" class="car-image">
           <h3>BMW M3</h3>
           <p>High-performance sports sedan with 473 hp and iconic M engineering.</p>
           <p><strong>Starting at:</strong> $76,000</p>
@@ -58,7 +108,7 @@
           </div>
 
           <!-- Keep Me Informed -->
-          <div class="keep-informed">
+          <div class="keep-informed professional-form">
             <h4>Keep Me Informed</h4>
             <form>
               <input type="text" placeholder="First Name" required><br>
